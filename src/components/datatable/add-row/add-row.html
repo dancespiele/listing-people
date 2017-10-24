@@ -1,0 +1,13 @@
+<template bindable="cols">
+  <require from='./add-row.css'></require>
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" value.bind="name" id="nameField">
+    </div>
+    <div class="form-group" repeat.for="col of cols">
+      <input type="checkbox" id.bind="col.name" checked.bind="col.checked">
+      <label for.bind="col.name">${col.title}</label>
+    </div>
+    <button class="btn btn-primary" type="button" click.trigger="add()">add</button>
+  </form>
+</template>
